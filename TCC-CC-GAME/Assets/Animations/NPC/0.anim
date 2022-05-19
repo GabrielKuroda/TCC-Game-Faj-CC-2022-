@@ -26,9 +26,19 @@ AnimationClip:
     - time: 0.4
       value: {fileID: -1495796495427720775, guid: ae14ded9faa80b74785616ec00986ca3, type: 3}
     - time: 0.6
-      value: {fileID: -82757199298946268, guid: ae14ded9faa80b74785616ec00986ca3, type: 3}
+      value: {fileID: 8745284039982918138, guid: ae14ded9faa80b74785616ec00986ca3, type: 3}
     - time: 0.8
       value: {fileID: 2590185811940133651, guid: ae14ded9faa80b74785616ec00986ca3, type: 3}
+    - time: 1
+      value: {fileID: 5088316998373936774, guid: ae14ded9faa80b74785616ec00986ca3, type: 3}
+    - time: 1.2
+      value: {fileID: -82757199298946268, guid: ae14ded9faa80b74785616ec00986ca3, type: 3}
+    - time: 1.4
+      value: {fileID: 5961413574744084474, guid: ae14ded9faa80b74785616ec00986ca3, type: 3}
+    - time: 1.6
+      value: {fileID: -82757199298946268, guid: ae14ded9faa80b74785616ec00986ca3, type: 3}
+    - time: 1.8
+      value: {fileID: 5088316998373936774, guid: ae14ded9faa80b74785616ec00986ca3, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -51,14 +61,19 @@ AnimationClip:
     - {fileID: 5088316998373936774, guid: ae14ded9faa80b74785616ec00986ca3, type: 3}
     - {fileID: 8745284039982918138, guid: ae14ded9faa80b74785616ec00986ca3, type: 3}
     - {fileID: -1495796495427720775, guid: ae14ded9faa80b74785616ec00986ca3, type: 3}
-    - {fileID: -82757199298946268, guid: ae14ded9faa80b74785616ec00986ca3, type: 3}
+    - {fileID: 8745284039982918138, guid: ae14ded9faa80b74785616ec00986ca3, type: 3}
     - {fileID: 2590185811940133651, guid: ae14ded9faa80b74785616ec00986ca3, type: 3}
+    - {fileID: 5088316998373936774, guid: ae14ded9faa80b74785616ec00986ca3, type: 3}
+    - {fileID: -82757199298946268, guid: ae14ded9faa80b74785616ec00986ca3, type: 3}
+    - {fileID: 5961413574744084474, guid: ae14ded9faa80b74785616ec00986ca3, type: 3}
+    - {fileID: -82757199298946268, guid: ae14ded9faa80b74785616ec00986ca3, type: 3}
+    - {fileID: 5088316998373936774, guid: ae14ded9faa80b74785616ec00986ca3, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1
+    m_StopTime: 2
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

@@ -17,6 +17,9 @@ TextureImporter:
   - first:
       213: -6250598388044826599
     second: 3_4
+  - first:
+      213: -6045798420381719288
+    second: 3_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -130,7 +133,7 @@ TextureImporter:
       name: 3_1
       rect:
         serializedVersion: 2
-        x: 64
+        x: 32
         y: 32
         width: 32
         height: 32
@@ -151,7 +154,7 @@ TextureImporter:
       name: 3_2
       rect:
         serializedVersion: 2
-        x: 32
+        x: 64
         y: 32
         width: 32
         height: 32
@@ -206,6 +209,27 @@ TextureImporter:
       bones: []
       spriteID: 91875f612e96149a0800000000000000
       internalID: -6250598388044826599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_5
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 805a7816e52091ca0800000000000000
+      internalID: -6045798420381719288
       vertices: []
       indices: 
       edges: []
