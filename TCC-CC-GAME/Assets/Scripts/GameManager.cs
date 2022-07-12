@@ -5,8 +5,7 @@ using UnityEngine;
 public class GameManager : IPersistentSingleton<GameManager>
 {
 
-    public bool gameMenuOpen;
-    public bool dialogActive;
+    public bool gameMenuOpen, dialogActive, fadingBetweenAreas, battleActive;
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +16,13 @@ public class GameManager : IPersistentSingleton<GameManager>
     // Update is called once per frame
     void Update()
     {
-        
+        if (gameMenuOpen || dialogActive || fadingBetweenAreas || battleActive )
+        {
+            PlayerController.Instance.canMove = false;
+        }
+        else
+        {
+            PlayerController.Instance.canMove = true;
+        }
     }
 }
