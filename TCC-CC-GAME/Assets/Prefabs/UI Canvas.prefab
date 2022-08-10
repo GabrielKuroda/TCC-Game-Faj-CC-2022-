@@ -399,6 +399,7 @@ GameObject:
   - component: {fileID: 3114388873743028998}
   - component: {fileID: 7248798289610554842}
   - component: {fileID: 1415453657223932683}
+  - component: {fileID: 6822827095504182879}
   m_Layer: 5
   m_Name: UI Canvas
   m_TagString: Untagged
@@ -506,3 +507,19 @@ MonoBehaviour:
   nameBox: {fileID: 4240746169601916887}
   dialogLines: []
   currentLine: 0
+--- !u!114 &6822827095504182879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8479379318445331856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01a6a66e63e58c14bb05dc2975f6dad6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeScreen: {fileID: 4610491056345176177}
+  fadeSpeed: 1
+  shouldFadeToBlack: 0
+  shouldFadeFromBlack: 0

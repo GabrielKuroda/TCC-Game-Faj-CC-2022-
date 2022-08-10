@@ -16,9 +16,15 @@ public class AreaExit : MonoBehaviour
     private bool shouldLoadAfterFade;
 
     // Start is called before the first frame update
+
+    private void Awake()
+    {
+        theEntrance = GetComponentInChildren<AreaEntrance>();
+        theEntrance.transitionName = areaTransitionName;
+    }
     void Start()
     {
-        theEntrance.transitionName = areaTransitionName;
+       
     }
 
     // Update is called once per frame
@@ -40,11 +46,8 @@ public class AreaExit : MonoBehaviour
         if (other.tag == "Player")
         {
             shouldLoadAfterFade = true;
-
             GameManager.Instance.fadingBetweenAreas = true;
-
             UIFade.Instance.FadeToBlack();
-
             PlayerController.Instance.areaTransitionName = areaTransitionName;
         }
     }

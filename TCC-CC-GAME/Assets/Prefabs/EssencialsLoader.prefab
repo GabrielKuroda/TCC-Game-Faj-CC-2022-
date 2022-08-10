@@ -44,4 +44,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 3173502157951879025, guid: 194dc26969aea9144ace83655eaa1363, type: 3}
-  uiFade: {fileID: 8479379318445331856, guid: 71de705c2f57a3d4e8162dcf6201cad8, type: 3}
+  uiScreen: {fileID: 8479379318445331856, guid: 71de705c2f57a3d4e8162dcf6201cad8, type: 3}
+  player: {fileID: 1765714504065686086, guid: c7526731e8bf79b4091137251400661e, type: 3}
