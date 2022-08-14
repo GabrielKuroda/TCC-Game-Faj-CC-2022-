@@ -42,6 +42,10 @@ public class PlayerController : IPersistentSingleton<PlayerController>
         {
             _rigidbody.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) * _speed;
         }
+        else
+        {
+            _rigidbody.velocity = Vector2.zero;
+        }
     }
 
     void CharacterFlip()

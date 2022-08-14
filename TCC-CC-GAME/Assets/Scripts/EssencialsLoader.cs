@@ -7,19 +7,27 @@ public class EssencialsLoader : MonoBehaviour
 
     public GameObject gameManager;
     public GameObject uiScreen;
+    public GameObject player;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        if(GameManager.Instance != null)
+        if (GameManager.Instance == null)
         {
             GameManager.Instance = Instantiate(gameManager).GetComponent<GameManager>();
         }
-
-        if (UIFade.Instance != null)
+        if (PlayerController.Instance == null)
+        {
+            PlayerController.Instance = Instantiate(player).GetComponent<PlayerController>();
+        }
+        if (UIFade.Instance == null)
         {
             UIFade.Instance = Instantiate(uiScreen).GetComponent<UIFade>();
         }
+    }
+    // Start is called before the first frame update
+    void Start()
+    {
+       
     }
 
     // Update is called once per frame
