@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Desert Second Dungeon.unity
     guid: 0acf2cb5ed0220540b3e4e42b0b8e949
+  - enabled: 1
+    path: Assets/Scenes/Desert Third Dungeon.unity
+    guid: f4c0ecab7c3332542a23b8304f4be7df
+  - enabled: 1
+    path: Assets/Scenes/Desert Boss Dungeon.unity
+    guid: 0a1afe2ecacfdf0428cf79f92ae4ce1a
   m_configObjects: {}
