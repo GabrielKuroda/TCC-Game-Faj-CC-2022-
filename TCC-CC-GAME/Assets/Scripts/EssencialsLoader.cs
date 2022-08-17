@@ -8,6 +8,7 @@ public class EssencialsLoader : MonoBehaviour
     public GameObject gameManager;
     public GameObject uiScreen;
     public GameObject player;
+    public GameObject battleManager;
 
     private void Awake()
     {
@@ -22,6 +23,10 @@ public class EssencialsLoader : MonoBehaviour
         if (UIFade.Instance == null)
         {
             UIFade.Instance = Instantiate(uiScreen).GetComponent<UIFade>();
+        }
+        if (BattleManager.Instance == null)
+        {
+            BattleManager.Instance = Instantiate(battleManager).GetComponent<BattleManager>();
         }
     }
     // Start is called before the first frame update
