@@ -62103,7 +62103,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8065923942208719937, guid: 66aa848f63b2c5d40bed59bf2a815b6e, type: 3}
       propertyPath: areaTransitionName
-      value: begin-1
+      value: begin-3-0
       objectReference: {fileID: 0}
     - target: {fileID: 8065923942208719950, guid: 66aa848f63b2c5d40bed59bf2a815b6e, type: 3}
       propertyPath: m_LocalPosition.x
