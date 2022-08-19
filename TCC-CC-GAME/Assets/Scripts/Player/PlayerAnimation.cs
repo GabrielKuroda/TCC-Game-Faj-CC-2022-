@@ -14,7 +14,7 @@ public class PlayerAnimation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(PlayerController.Instance.rigidbody.velocity.sqrMagnitude > 0)
+        if(PlayerController.Instance.Rigidbody.velocity.sqrMagnitude > 0)
         {
             _animator.SetInteger("transition", 1);
         }

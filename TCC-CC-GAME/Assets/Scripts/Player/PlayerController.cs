@@ -14,7 +14,7 @@ public class PlayerController : IPersistentSingleton<PlayerController>
     [SerializeField] private Rigidbody2D _rigidbody;
     [SerializeField] private float _speed;
 
-    public Rigidbody2D rigidbody { get => _rigidbody; set => _rigidbody = value; }
+    public Rigidbody2D Rigidbody { get => _rigidbody; set => _rigidbody = value; }
 
 
     // Start is called before the first frame update

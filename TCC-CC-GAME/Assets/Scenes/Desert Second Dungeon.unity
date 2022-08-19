@@ -54310,7 +54310,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -22.35, y: 34.04, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1925378788}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -60254,11 +60255,19 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1191013818}
     m_Modifications:
     - target: {fileID: 1320384921455325892, guid: e9031f60b33227c4d89e34b4e1c72ffe, type: 3}
       propertyPath: m_Name
       value: Door Area
+      objectReference: {fileID: 0}
+    - target: {fileID: 3085655177649924445, guid: e9031f60b33227c4d89e34b4e1c72ffe, type: 3}
+      propertyPath: areaToLoad
+      value: Desert Store
+      objectReference: {fileID: 0}
+    - target: {fileID: 3085655177649924445, guid: e9031f60b33227c4d89e34b4e1c72ffe, type: 3}
+      propertyPath: areaTransitionName
+      value: begin-3-2
       objectReference: {fileID: 0}
     - target: {fileID: 4018908707700100873, guid: e9031f60b33227c4d89e34b4e1c72ffe, type: 3}
       propertyPath: m_LocalPosition.x
@@ -60278,15 +60287,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7333994527069948783, guid: e9031f60b33227c4d89e34b4e1c72ffe, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7333994527069948783, guid: e9031f60b33227c4d89e34b4e1c72ffe, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 22.35
       objectReference: {fileID: 0}
     - target: {fileID: 7333994527069948783, guid: e9031f60b33227c4d89e34b4e1c72ffe, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -34.04
       objectReference: {fileID: 0}
     - target: {fileID: 7333994527069948783, guid: e9031f60b33227c4d89e34b4e1c72ffe, type: 3}
       propertyPath: m_LocalPosition.z
@@ -60298,15 +60307,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7333994527069948783, guid: e9031f60b33227c4d89e34b4e1c72ffe, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7333994527069948783, guid: e9031f60b33227c4d89e34b4e1c72ffe, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7333994527069948783, guid: e9031f60b33227c4d89e34b4e1c72ffe, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7333994527069948783, guid: e9031f60b33227c4d89e34b4e1c72ffe, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -60322,6 +60331,29 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9031f60b33227c4d89e34b4e1c72ffe, type: 3}
+--- !u!4 &1925378788 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7333994527069948783, guid: e9031f60b33227c4d89e34b4e1c72ffe, type: 3}
+  m_PrefabInstance: {fileID: 1925378787}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1925378789 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5721334483847851548, guid: e9031f60b33227c4d89e34b4e1c72ffe, type: 3}
+  m_PrefabInstance: {fileID: 1925378787}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1925378790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1925378789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0955e19a7c6010a48ade4d1fed65fcbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  variableDoorName: desert_door_3_is_open
 --- !u!1001 &2030294390
 PrefabInstance:
   m_ObjectHideFlags: 0
