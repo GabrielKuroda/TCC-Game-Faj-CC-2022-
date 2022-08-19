@@ -77,7 +77,7 @@ public class BattleManager : IPersistentSingleton<BattleManager>
             Debug.Log("pos: " + playerPositions.position);
             Debug.Log("rot: " + playerPositions.rotation);
             Debug.Log("playr prefab: " + playerPrefabs);
-            BattleChar newPlayer = Instantiate(playerPrefabs, playerPositions.position, playerPositions.rotation);
+            /*BattleChar newPlayer = Instantiate(playerPrefabs, playerPositions.position, playerPositions.rotation);
 
             newPlayer.transform.parent = playerPositions;
             playerAnimator = newPlayer.GetComponent<Animator>();
@@ -98,7 +98,7 @@ public class BattleManager : IPersistentSingleton<BattleManager>
                         }
                     }
                 }
-            }
+            }*/
             UpdateUIStats();
             ableToAct = true;
             currentEnemy = 0;

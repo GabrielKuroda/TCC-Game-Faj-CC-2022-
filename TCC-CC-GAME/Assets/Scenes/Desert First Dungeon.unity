@@ -215,8 +215,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 69154744}
-  - component: {fileID: 69154743}
   - component: {fileID: 69154742}
+  - component: {fileID: 69154743}
   m_Layer: 0
   m_Name: BattleZone
   m_TagString: Untagged
@@ -242,9 +242,9 @@ MonoBehaviour:
   - enemies:
     - zero
   activateOnStay: 0
-  timeBetweenBattles: 10
---- !u!61 &69154743
-BoxCollider2D:
+  timeBetweenBattles: 3
+--- !u!60 &69154743
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -256,7 +256,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -11.462074, y: -2.3342514}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -266,9 +266,16 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 64.708206, y: 30.375874}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 16.429277, y: 12.255108}
+      - {x: -43.930786, y: 12.233009}
+      - {x: -41.908012, y: -4.855543}
+      - {x: -7.1136765, y: -5.607467}
+      - {x: -7.123211, y: -16.032118}
+      - {x: -7.044153, y: -16.863499}
+      - {x: 12.178436, y: -16.77573}
+      - {x: 16.271194, y: -7.7828074}
 --- !u!4 &69154744
 Transform:
   m_ObjectHideFlags: 0
@@ -281,7 +288,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &106275388
 PrefabInstance:
@@ -606,7 +613,7 @@ PrefabInstance:
       objectReference: {fileID: 9023586840063822236, guid: 84e6f056539b2704098938cf89572ecd, type: 3}
     - target: {fileID: 4409325879462180034, guid: 4855d8624a95bb8498009cb5ff30db65, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4409325879462180034, guid: 4855d8624a95bb8498009cb5ff30db65, type: 3}
       propertyPath: m_LocalPosition.x
