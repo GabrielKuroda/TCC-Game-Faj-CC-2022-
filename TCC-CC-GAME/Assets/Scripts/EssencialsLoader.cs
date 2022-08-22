@@ -8,7 +8,6 @@ public class EssencialsLoader : MonoBehaviour
     public GameObject gameManager;
     public GameObject uiScreen;
     public GameObject player;
-
     private void Awake()
     {
         if (GameManager.Instance == null)
