@@ -25,7 +25,7 @@ public class BattleStarter : IPersistentSingleton<BattleStarter>
             if(betweenBattleCounter <= 0)
             {
                 betweenBattleCounter = Random.Range(timeBetweenBattles * .5f, timeBetweenBattles * 1.5f);
-                PlayerController.Instance.canMove = false;
+                GameManager.Instance.battleActive = true;
                 Debug.Log("Batalha encontrada");
                 StartCoroutine(StartBattleCo());
             }

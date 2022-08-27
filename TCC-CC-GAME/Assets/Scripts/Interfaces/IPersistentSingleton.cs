@@ -32,7 +32,7 @@ public class IPersistentSingleton<T> : MonoBehaviour where T : MonoBehaviour
             _uniqueInstance = this as T;
         else
         {
-            DestroyImmediate(this.gameObject);
+            //DestroyImmediate(this.gameObject);
             Debug.LogWarning("Singleton duplicado destruido!!");
         }
     }

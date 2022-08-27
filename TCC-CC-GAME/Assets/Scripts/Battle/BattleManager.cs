@@ -13,9 +13,11 @@ public class BattleManager : IPersistentSingleton<BattleManager>
     public GameObject battleScene;
     public GameObject uiButtonsHolder;
 
-    public int currentTurn;
     public int chanceToFlee = 35;
     public int currentEnemy;
+    public int numberOfRounds = 5;
+    public int currentRound;
+    private int correctAnswersCount = 0;
 
     public Transform playerPositions;
     public Transform[] enemyPosition;
@@ -26,7 +28,7 @@ public class BattleManager : IPersistentSingleton<BattleManager>
     public List<BattleChar> activeBattlers;
 
     public Text playerNameText;
-    public Text corretAnswer;
+    public string corretAnswer = "10";
     public Text playerAnswer;
 
     private Animator playerAnimator;
@@ -43,22 +45,18 @@ public class BattleManager : IPersistentSingleton<BattleManager>
         {
             if (turnWaiting)
             {
-                if (activeBattlers[currentTurn].isPlayer)
+                if (ableToAct)
                 {
-                    if (ableToAct)
-                    {
-                        uiButtonsHolder.SetActive(true);
-                    }
-                    else
-                    {
-                        uiButtonsHolder.SetActive(false);
-                    }
+                    uiButtonsHolder.SetActive(true);
                 }
                 else
                 {
                     uiButtonsHolder.SetActive(false);
-                    StartCoroutine(EnemyTurn());
                 }
+            }
+            else
+            {
+                uiButtonsHolder.SetActive(false);
             }
         }
     }
@@ -69,20 +67,16 @@ public class BattleManager : IPersistentSingleton<BattleManager>
         {
             activeBattlers = new List<BattleChar>();
             battleActive = true;
-            PlayerController.Instance.canMove = false;
+            GameManager.Instance.battleActive = true;
 
             transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, transform.position.z);
 
             battleScene.SetActive(true);
-            Debug.Log("pos: " + playerPositions.position);
-            Debug.Log("rot: " + playerPositions.rotation);
-            Debug.Log("playr prefab: " + playerPrefabs);
-            /*BattleChar newPlayer = Instantiate(playerPrefabs, playerPositions.position, playerPositions.rotation);
+            BattleChar newPlayer = Instantiate(playerPrefabs, playerPositions.position, playerPositions.rotation);
 
             newPlayer.transform.parent = playerPositions;
             playerAnimator = newPlayer.GetComponent<Animator>();
             activeBattlers.Add(newPlayer);
-            playerNameText.text = activeBattlers[0].charName;
 
             for (int i = 0; i < enemiesToSpaw.Length; i++)
             {
@@ -92,32 +86,29 @@ public class BattleManager : IPersistentSingleton<BattleManager>
                     {
                         if (enemyPrefabs[j].charName == enemiesToSpaw[i])
                         {
-                            BattleChar newEnemy = Instantiate(enemyPrefabs[j], enemyPosition[i].transform.position, enemyPosition[i].transform.rotation);
-                            newEnemy.transform.parent = enemyPosition[i];
+                            BattleChar newEnemy = Instantiate(enemyPrefabs[0], enemyPosition[0].transform.position, enemyPosition[0].transform.rotation);
+                            newEnemy.transform.parent = enemyPosition[0];
                             activeBattlers.Add(newEnemy);
                         }
                     }
                 }
-            }*/
+            }
             UpdateUIStats();
             ableToAct = true;
             currentEnemy = 0;
             turnWaiting = true;
-            currentTurn = 0;
+            currentRound = 0;
+            correctAnswersCount = 0;
         }
     }
 
     public void NextTurn()
     {
-        currentTurn++;
-        if (currentTurn >= activeBattlers.Count)
-        {
-            currentTurn = 0;
-            ableToAct = true;
-        }
-        Debug.Log(currentTurn);
+        currentRound++;
+        Debug.Log("Round: " + currentRound);
         turnWaiting = true;
         UpdateUIStats();
+        ableToAct = true;
     }
 
     public void Flee()
@@ -130,21 +121,21 @@ public class BattleManager : IPersistentSingleton<BattleManager>
         else
         {
             Debug.Log("Não pode escapar da batalha");
-            currentTurn++;
+            currentRound++;
         }
     }
 
-    public void Attack()
+    public void Answer()
     {
         ableToAct = false;
-        StartCoroutine(AttackAnimation());
+        StartCoroutine(AnswerAnimation());
     }
 
-    public IEnumerator AttackAnimation()
+    public IEnumerator AnswerAnimation()
     {
         yield return new WaitForSeconds(1f);
-        AnswerQuestion(1);
         NextTurn();
+        AnswerQuestion();
     }
 
     public IEnumerator EndBattle()
@@ -155,8 +146,8 @@ public class BattleManager : IPersistentSingleton<BattleManager>
         yield return new WaitForSeconds(1.5f);
         battleScene.SetActive(false);
         UIFade.Instance.FadeFromBlack();
-        currentTurn = 0;
-        PlayerController.Instance.canMove = true;
+        currentRound = 0;
+        GameManager.Instance.battleActive = false;
         Destroy(activeBattlers[0].gameObject);
     }
 
@@ -167,11 +158,15 @@ public class BattleManager : IPersistentSingleton<BattleManager>
         NextTurn();
     }
 
-    public void AnswerQuestion(int target)
+    public void AnswerQuestion()
     {
         ValidateCorretAnswer();
         UpdateUIStats();
-        ValidateWin();
+        if(currentRound == numberOfRounds)
+        {
+            ValidateWin();
+        }
+        
     }
 
     public void UpdateUIStats()
@@ -182,13 +177,13 @@ public class BattleManager : IPersistentSingleton<BattleManager>
 
     public void ValidateWin()
     {
-        if (activeBattlers[0].correctAnswers < 3)
+        if (correctAnswersCount < 3)
         {
             activeBattlers[0].EnemyFade();
             Debug.Log("Você perdeu a batalha");
             StartCoroutine(EndBattle());
         }
-        if(activeBattlers[0].correctAnswers >= 3)
+        if(correctAnswersCount >= 3)
         {
             Debug.Log("Você venceu a batalha");
             activeBattlers[1].EnemyFade();
@@ -197,16 +192,20 @@ public class BattleManager : IPersistentSingleton<BattleManager>
         }
         if (activeBattlers.Count == 1)
         {
-            Debug.Log("Você venceu a batalha");
             StartCoroutine(EndBattle());
         }
     }
 
     public void ValidateCorretAnswer()
     {
-        if (playerAnswer == corretAnswer)
+        if (playerAnswer.text == corretAnswer)
         {
-            activeBattlers[0].correctAnswers++;
+            correctAnswersCount++;
+            Debug.Log("Acertou a resposta");
+        }
+        else
+        {
+            Debug.Log("Errou a resposta");
         }
     }
 

@@ -6,12 +6,10 @@ public class BattleChar : IPersistentSingleton<BattleChar>
 {
 
     public bool isPlayer;
-    public bool hasDied;
     private bool shouldFade;
 
     public string charName;
 
-    public int correctAnswers;
     public float fadSpeed = 1f;
 
     public SpriteRenderer theSprite;
