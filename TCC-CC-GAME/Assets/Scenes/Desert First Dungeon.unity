@@ -243,6 +243,8 @@ MonoBehaviour:
     - zero
   activateOnStay: 0
   timeBetweenBattles: 2
+  operation: adicao
+  difficult: facil
 --- !u!60 &69154743
 PolygonCollider2D:
   m_ObjectHideFlags: 0

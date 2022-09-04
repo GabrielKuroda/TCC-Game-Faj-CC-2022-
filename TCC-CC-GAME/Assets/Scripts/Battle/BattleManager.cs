@@ -16,8 +16,9 @@ public class BattleManager : IPersistentSingleton<BattleManager>
     public int chanceToFlee = 35;
     public int currentEnemy;
     public int numberOfRounds = 5;
-    public int currentRound;
+    private int currentRound = 1;
     private int correctAnswersCount = 0;
+    private int index = 0;
 
     public Transform playerPositions;
     public Transform[] enemyPosition;
@@ -27,9 +28,20 @@ public class BattleManager : IPersistentSingleton<BattleManager>
 
     public List<BattleChar> activeBattlers;
 
+    public QuestionList questionList;
+    public QuestionList battleQuestionList;
+
     public Text playerNameText;
-    public string corretAnswer = "10";
+    private string correctAnswer;
+    public Text question;
     public Text playerAnswer;
+    public Text battleStageInfo;
+    public Text difficultInfo;
+    public Text calcTypeInfo;
+    public Text localInfo;
+
+    private string difficult;
+    private string operation;
 
     private Animator playerAnimator;
 
@@ -61,14 +73,29 @@ public class BattleManager : IPersistentSingleton<BattleManager>
         }
     }
 
-    public void BattleStart(string[] enemiesToSpaw)
+    public void BattleStart(string[] enemiesToSpaw, QuestionList questions, string receivedDifficult, string receivedOperation)
     {
         if (!battleActive)
         {
             activeBattlers = new List<BattleChar>();
+            questionList = questions;
+            currentRound = 1;
+            index = 0;
+            UpdateUIStats();
+            Debug.Log("Questão 1: " + questionList.questions[0].equation);
+            Debug.Log("Resposta 1: " + questionList.questions[0].answer);
+            Debug.Log("Questão 2: " + questionList.questions[1].equation);
+            Debug.Log("Resposta 2: " + questionList.questions[1].answer);
+            Debug.Log("Questão 3: " + questionList.questions[2].equation);
+            Debug.Log("Resposta 3: " + questionList.questions[2].answer);
+            Debug.Log("Questão 4: " + questionList.questions[3].equation);
+            Debug.Log("Resposta 4: " + questionList.questions[3].answer);
+            Debug.Log("Questão 5: " + questionList.questions[4].equation);
+            Debug.Log("Resposta 5: " + questionList.questions[4].answer);
             battleActive = true;
             GameManager.Instance.battleActive = true;
-
+            difficult = receivedDifficult;
+            operation = receivedOperation;
             transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, transform.position.z);
 
             battleScene.SetActive(true);
@@ -102,12 +129,17 @@ public class BattleManager : IPersistentSingleton<BattleManager>
         }
     }
 
+    private QuestionList SelectRandomQuestions(QuestionList questionList)
+    {
+        return questionList;
+    }
+
     public void NextTurn()
     {
         currentRound++;
+        UpdateUIStats();
         Debug.Log("Round: " + currentRound);
         turnWaiting = true;
-        UpdateUIStats();
         ableToAct = true;
     }
 
@@ -134,8 +166,8 @@ public class BattleManager : IPersistentSingleton<BattleManager>
     public IEnumerator AnswerAnimation()
     {
         yield return new WaitForSeconds(1f);
-        NextTurn();
         AnswerQuestion();
+        NextTurn();
     }
 
     public IEnumerator EndBattle()
@@ -161,7 +193,6 @@ public class BattleManager : IPersistentSingleton<BattleManager>
     public void AnswerQuestion()
     {
         ValidateCorretAnswer();
-        UpdateUIStats();
         if(currentRound == numberOfRounds)
         {
             ValidateWin();
@@ -171,7 +202,15 @@ public class BattleManager : IPersistentSingleton<BattleManager>
 
     public void UpdateUIStats()
     {
-        //playerHpText.text = activeBattlers[0].currentHp.ToString() + "/" + activeBattlers[0].maxHp.ToString();
+        correctAnswer = questionList.questions[index].answer;
+        question.text = questionList.questions[index].equation + " = ?";
+        difficult = questionList.questions[index].difficulty;
+        operation = questionList.questions[index].operation;
+        battleStageInfo.text = currentRound + " / " + numberOfRounds;
+        difficultInfo.text = questionList.questions[index].difficulty;
+        calcTypeInfo.text = questionList.questions[index].operation;
+        localInfo.text = "Dungeon";
+        index++;
         //playerMpText.text = activeBattlers[0].currentMp.ToString() + "/" + activeBattlers[0].maxMp.ToString();
     }
 
@@ -198,7 +237,9 @@ public class BattleManager : IPersistentSingleton<BattleManager>
 
     public void ValidateCorretAnswer()
     {
-        if (playerAnswer.text == corretAnswer)
+        Debug.Log("resposta do player = " + playerAnswer.text);
+        Debug.Log("resposta correta = " + correctAnswer);
+        if (playerAnswer.text == correctAnswer)
         {
             correctAnswersCount++;
             Debug.Log("Acertou a resposta");
@@ -207,6 +248,7 @@ public class BattleManager : IPersistentSingleton<BattleManager>
         {
             Debug.Log("Errou a resposta");
         }
+        playerAnswer.text = "";
     }
 
 }

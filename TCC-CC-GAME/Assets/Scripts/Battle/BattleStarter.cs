@@ -10,6 +10,9 @@ public class BattleStarter : IPersistentSingleton<BattleStarter>
     public float timeBetweenBattles;
     private float betweenBattleCounter;
 
+    public string operation;
+    public string difficult;
+
     void Start()
     {
         betweenBattleCounter = Random.Range(timeBetweenBattles*.5f, timeBetweenBattles*1.5f);
@@ -27,7 +30,7 @@ public class BattleStarter : IPersistentSingleton<BattleStarter>
                 betweenBattleCounter = Random.Range(timeBetweenBattles * .5f, timeBetweenBattles * 1.5f);
                 GameManager.Instance.battleActive = true;
                 Debug.Log("Batalha encontrada");
-                StartCoroutine(StartBattleCo());
+                StartCoroutine(StartBattleCo(ApiCaller.getByDifficultyAndOperation(difficult, operation)));
             }
         }
     }
@@ -48,13 +51,13 @@ public class BattleStarter : IPersistentSingleton<BattleStarter>
         }
     }
     
-    public IEnumerator StartBattleCo()
+    public IEnumerator StartBattleCo(QuestionList questionList)
     {
         UIFade.Instance.FadeToBlack();
         int selectedBattle = Random.Range(0, potentialBattles.Length);
         yield return new WaitForSeconds(1.5f);
         Debug.Log("inimigo: " + potentialBattles[selectedBattle].enemies[0]);
-        BattleManager.Instance.BattleStart(potentialBattles[selectedBattle].enemies);
+        BattleManager.Instance.BattleStart(potentialBattles[selectedBattle].enemies, questionList, difficult, operation);
         UIFade.Instance.FadeFromBlack();
     }
 }

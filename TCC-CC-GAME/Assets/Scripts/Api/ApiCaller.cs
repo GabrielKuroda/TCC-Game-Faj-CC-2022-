@@ -33,7 +33,7 @@ public class ApiCaller
         return QuestionMapper.convertJsonToQuestion(objResponse.ToString());
     }
 
-    public static QuestionList getByDifficultyAndOperation(string difficulty,string operation)
+    public static QuestionList getByDifficultyAndOperation(string difficulty, string operation)
     {
         var requisicaoWeb = WebRequest.CreateHttp(urlApi + "filter/" + difficulty + "/" + operation);
         requisicaoWeb.Method = "GET";
