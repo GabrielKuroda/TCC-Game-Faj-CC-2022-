@@ -81,7 +81,6 @@ public class BattleManager : IPersistentSingleton<BattleManager>
             questionList = questions;
             currentRound = 1;
             index = 0;
-            UpdateUIStats();
             Debug.Log("Questão 1: " + questionList.questions[0].equation);
             Debug.Log("Resposta 1: " + questionList.questions[0].answer);
             Debug.Log("Questão 2: " + questionList.questions[1].equation);
@@ -124,7 +123,6 @@ public class BattleManager : IPersistentSingleton<BattleManager>
             ableToAct = true;
             currentEnemy = 0;
             turnWaiting = true;
-            currentRound = 0;
             correctAnswersCount = 0;
         }
     }
@@ -167,7 +165,10 @@ public class BattleManager : IPersistentSingleton<BattleManager>
     {
         yield return new WaitForSeconds(1f);
         AnswerQuestion();
-        NextTurn();
+        if (currentRound != numberOfRounds)
+        {
+            NextTurn();
+        }
     }
 
     public IEnumerator EndBattle()
