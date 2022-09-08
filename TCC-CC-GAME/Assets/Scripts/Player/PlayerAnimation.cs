@@ -17,10 +17,13 @@ public class PlayerAnimation : MonoBehaviour
         if(PlayerController.Instance.Rigidbody.velocity.sqrMagnitude > 0)
         {
             _animator.SetInteger("transition", 1);
+            PlayerController.Instance.FloorParticle.Play();
         }
         else
         {
             _animator.SetInteger("transition", 0);
+            PlayerController.Instance.FloorParticle.Stop();
+
         }
     }
 }

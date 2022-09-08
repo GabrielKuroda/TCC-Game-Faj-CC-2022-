@@ -14,12 +14,15 @@ public class PlayerController : IPersistentSingleton<PlayerController>
     [SerializeField] private Rigidbody2D _rigidbody;
     [SerializeField] private float _speed;
 
-    public Rigidbody2D Rigidbody { get => _rigidbody; set => _rigidbody = value; }
+    private ParticleSystem _floorParticle;
 
+    public Rigidbody2D Rigidbody { get => _rigidbody; set => _rigidbody = value; }
+    public ParticleSystem FloorParticle { get => _floorParticle; set => _floorParticle = value; }
 
     // Start is called before the first frame update
     void Start()
     {
+        _floorParticle = GetComponentInChildren<ParticleSystem>();
         _rigidbody = GetComponent<Rigidbody2D>();
         DontDestroyOnLoad(gameObject);
     }
