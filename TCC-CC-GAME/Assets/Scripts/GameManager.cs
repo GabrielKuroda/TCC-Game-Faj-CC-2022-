@@ -18,11 +18,11 @@ public class GameManager : IPersistentSingleton<GameManager>
     {
         if (gameMenuOpen || dialogActive || fadingBetweenAreas || battleActive )
         {
-            PlayerController.Instance.canMove = false;
+            PlayerController.Instance.CanMove = false;
         }
         else
         {
-            PlayerController.Instance.canMove = true;
+            PlayerController.Instance.CanMove = true;
         }
     }
 }

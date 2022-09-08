@@ -21,7 +21,7 @@ public class BattleStarter : IPersistentSingleton<BattleStarter>
     void Update()
     {
         if(inArea && Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0){
-            if(PlayerController.Instance.canMove){
+            if(PlayerController.Instance.CanMove){
                 betweenBattleCounter -= Time.deltaTime;
             }
 

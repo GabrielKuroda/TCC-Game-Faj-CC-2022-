@@ -7,7 +7,7 @@ public class PlayerController : IPersistentSingleton<PlayerController>
     public Vector3 bottomLeftLimit;
     public Vector3 topRightLimit;
 
-    public bool canMove = true;
+    [SerializeField] private bool canMove = true;
 
     public string areaTransitionName;
 
@@ -18,6 +18,7 @@ public class PlayerController : IPersistentSingleton<PlayerController>
 
     public Rigidbody2D Rigidbody { get => _rigidbody; set => _rigidbody = value; }
     public ParticleSystem FloorParticle { get => _floorParticle; set => _floorParticle = value; }
+    public bool CanMove { get => canMove; set => canMove = value; }
 
     // Start is called before the first frame update
     void Start()

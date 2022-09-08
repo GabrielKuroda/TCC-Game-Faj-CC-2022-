@@ -27,6 +27,7 @@ public class NpcDialogueSettings : MonoBehaviour
     private void RpgTalk_OnEndTalk()
     {
         isInDialogue = false;
+        PlayerController.Instance.CanMove = true;
     }
 
     void Start()
@@ -37,10 +38,11 @@ public class NpcDialogueSettings : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F) && playerRange && !isInDialogue)
+        if (Input.GetKeyDown(KeyCode.L) && playerRange && !isInDialogue)
         {
             rpgTalk.NewTalk(startLineDialogueNpc, endLineDialogueNpc);
             isInDialogue = true;
+            PlayerController.Instance.CanMove = false;
         }
     }
 
