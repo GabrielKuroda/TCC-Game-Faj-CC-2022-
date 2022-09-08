@@ -27,7 +27,7 @@ public class NpcDialogueSettings : MonoBehaviour
     private void RpgTalk_OnEndTalk()
     {
         isInDialogue = false;
-        PlayerController.Instance.CanMove = true;
+        GameManager.Instance.dialogActive = false;
     }
 
     void Start()
@@ -42,7 +42,7 @@ public class NpcDialogueSettings : MonoBehaviour
         {
             rpgTalk.NewTalk(startLineDialogueNpc, endLineDialogueNpc);
             isInDialogue = true;
-            PlayerController.Instance.CanMove = false;
+            GameManager.Instance.dialogActive = true;
         }
     }
 
