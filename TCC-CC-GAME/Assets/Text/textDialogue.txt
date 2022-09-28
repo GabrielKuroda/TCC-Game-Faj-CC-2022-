@@ -1,0 +1,68 @@
+Mr.Régua: Olá pessoa, Veja Bem-Vinda(o) a Cidade do Deserto!! 
+
+
+Mr.Régua: [question=0]Olá forasteiro, tudo certo?
+[choice] Sim, tudo certo e com você?!!! [newtalk start=SimTudoBem_begin break=SimTudoBem_end]
+[choice]Não infelizmente, e com você?... [newtalk start=NaoTudoBem_begin break=NaoTudoBem_end]
+
+Pequeno Abaco: Oiiii :)
+
+
+[title=SimTudoBem_begin]
+Mr.Régua: Infelizmente estou meio preocupado, a cidade acabou sendo tomada por certo vírus, e infectou varios amigos meus, que estão agindo de maneiro ruim agora
+Mr.Régua: Fiquei sabendo que estão se escondendo na Loja
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Character1: [question=0]Do you remember me?
+[choice] Yes, omg!!! [newtalk start=answeredYes_begin break=answeredYes_end]
+[choice] No, sorry... [newtalk start=answeredNo_begin break=answeredNo_end]
+[title=answeredYes_begin]
+Character1: Yeeeeey! I knew you would never forget me!
+[title=answeredYes_end]
+[title=answeredNo_begin]
+Character1: Oh... Ok... I didn't like you anyway...
+[title=answeredNo_end]

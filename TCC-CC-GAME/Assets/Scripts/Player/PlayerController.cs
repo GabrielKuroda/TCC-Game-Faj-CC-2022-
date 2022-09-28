@@ -7,19 +7,23 @@ public class PlayerController : IPersistentSingleton<PlayerController>
     public Vector3 bottomLeftLimit;
     public Vector3 topRightLimit;
 
-    public bool canMove = true;
+    [SerializeField] private bool canMove = true;
 
     public string areaTransitionName;
 
     [SerializeField] private Rigidbody2D _rigidbody;
     [SerializeField] private float _speed;
 
-    public Rigidbody2D Rigidbody { get => _rigidbody; set => _rigidbody = value; }
+    private ParticleSystem _floorParticle;
 
+    public Rigidbody2D Rigidbody { get => _rigidbody; set => _rigidbody = value; }
+    public ParticleSystem FloorParticle { get => _floorParticle; set => _floorParticle = value; }
+    public bool CanMove { get => canMove; set => canMove = value; }
 
     // Start is called before the first frame update
     void Start()
     {
+        _floorParticle = GetComponentInChildren<ParticleSystem>();
         _rigidbody = GetComponent<Rigidbody2D>();
         DontDestroyOnLoad(gameObject);
     }
