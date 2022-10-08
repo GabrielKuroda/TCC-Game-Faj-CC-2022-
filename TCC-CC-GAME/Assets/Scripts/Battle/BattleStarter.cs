@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
+using UnityEngine.Networking;
 
 public class BattleStarter : IPersistentSingleton<BattleStarter>
 {
@@ -12,10 +14,13 @@ public class BattleStarter : IPersistentSingleton<BattleStarter>
 
     public string operation;
     public string difficult;
+    
+    private string endpointBase = "http://localhost:8080/questions";
 
     void Start()
     {
         betweenBattleCounter = Random.Range(timeBetweenBattles*.5f, timeBetweenBattles*1.5f);
+        
     }
 
     void Update()
@@ -30,7 +35,8 @@ public class BattleStarter : IPersistentSingleton<BattleStarter>
                 betweenBattleCounter = Random.Range(timeBetweenBattles * .5f, timeBetweenBattles * 1.5f);
                 GameManager.Instance.battleActive = true;
                 Debug.Log("Batalha encontrada");
-                StartCoroutine(StartBattleCo(ApiCaller.getByDifficultyAndOperation(difficult, operation)));
+                string endpoint = endpointBase + "/filter/" + difficult + "/" + operation;
+                StartCoroutine(StartBattleCo(endpoint));
             }
         }
     }
@@ -51,13 +57,34 @@ public class BattleStarter : IPersistentSingleton<BattleStarter>
         }
     }
     
-    public IEnumerator StartBattleCo(QuestionList questionList)
+    public IEnumerator StartBattleCo(string endpoint)
     {
+
+        var getRequest = CreateRequest(endpoint);
+        yield return getRequest.SendWebRequest();
+        QuestionList questionList = QuestionMapper.convertJsonToQuestion(getRequest.downloadHandler.text);
+
         UIFade.Instance.FadeToBlack();
         int selectedBattle = Random.Range(0, potentialBattles.Length);
         yield return new WaitForSeconds(1.5f);
         Debug.Log("inimigo: " + potentialBattles[selectedBattle].enemies[0]);
         BattleManager.Instance.BattleStart(potentialBattles[selectedBattle].enemies, questionList, difficult, operation);
         UIFade.Instance.FadeFromBlack();
+    }
+
+    private UnityWebRequest CreateRequest(string path, RequestType type = RequestType.GET, object data = null)
+    {
+        var request = new UnityWebRequest(path, type.ToString());
+
+        if (data != null)
+        {
+            var bodyRaw = Encoding.UTF8.GetBytes(JsonUtility.ToJson(data));
+            request.uploadHandler = new UploadHandlerRaw(bodyRaw);
+        }
+
+        request.downloadHandler = new DownloadHandlerBuffer();
+        request.SetRequestHeader("Content-Type", "application/json");
+
+        return request;
     }
 }
