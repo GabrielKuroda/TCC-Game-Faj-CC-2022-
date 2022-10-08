@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class GameManager : IPersistentSingleton<GameManager>
 {
@@ -16,7 +18,7 @@ public class GameManager : IPersistentSingleton<GameManager>
     // Update is called once per frame
     void Update()
     {
-        if (gameMenuOpen || dialogActive || fadingBetweenAreas || battleActive )
+        if (gameMenuOpen || dialogActive || fadingBetweenAreas || battleActive || UIManager.Instance.PainelExitIsOpen )
         {
             PlayerController.Instance.CanMove = false;
         }
@@ -25,4 +27,15 @@ public class GameManager : IPersistentSingleton<GameManager>
             PlayerController.Instance.CanMove = true;
         }
     }
+
+    public void LoadNextScene()
+    {
+        SceneManager.LoadScene("Desert");
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
+
 }
