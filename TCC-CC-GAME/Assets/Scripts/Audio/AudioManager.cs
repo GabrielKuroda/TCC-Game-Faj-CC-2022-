@@ -6,13 +6,12 @@ public class AudioManager : IPersistentSingleton<AudioManager>
 {
     // Start is called before the first frame update
 
-    private AudioSource _audioSource;
+    [SerializeField] private AudioSource _audioSource;
 
-    void Start()
+    private void Start()
     {
-        _audioSource = GetComponent<AudioSource>();
+        DontDestroyOnLoad(_audioSource);
     }
-
     public void PlayBGM(AudioClip clip)
     {
         _audioSource.clip = clip;
