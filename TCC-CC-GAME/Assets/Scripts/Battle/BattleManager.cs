@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class BattleManager : IPersistentSingleton<BattleManager>
 {
@@ -11,6 +12,7 @@ public class BattleManager : IPersistentSingleton<BattleManager>
     public bool turnWaiting;
 
     public GameObject battleScene;
+    public GameObject answerPanel;
     public GameObject uiButtonsHolder;
 
     public int chanceToFlee = 35;
@@ -39,15 +41,21 @@ public class BattleManager : IPersistentSingleton<BattleManager>
     public Text difficultInfo;
     public Text calcTypeInfo;
     public Text localInfo;
+    public Text lifesRemainingText;
+
+    public InputField answerInput;
 
     private string difficult;
     private string operation;
 
     private Animator playerAnimator;
 
+    public Vector3 respawnLocal;
+
     // Start is called before the first frame update
     void Start()
     {
+        respawnLocal = new Vector3(-6.72f, 0.29f, 0f);
         DontDestroyOnLoad(gameObject);
     }
 
@@ -70,6 +78,11 @@ public class BattleManager : IPersistentSingleton<BattleManager>
             {
                 uiButtonsHolder.SetActive(false);
             }
+        }
+
+        if(GameManager.Instance.lifes == 0 && !battleActive)
+        {
+            StartCoroutine(RespawnDungeon());
         }
     }
 
@@ -98,11 +111,6 @@ public class BattleManager : IPersistentSingleton<BattleManager>
             transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, transform.position.z);
 
             battleScene.SetActive(true);
-            BattleChar newPlayer = Instantiate(playerPrefabs, playerPositions.position, playerPositions.rotation);
-
-            newPlayer.transform.parent = playerPositions;
-            playerAnimator = newPlayer.GetComponent<Animator>();
-            activeBattlers.Add(newPlayer);
 
             for (int i = 0; i < enemiesToSpaw.Length; i++)
             {
@@ -112,7 +120,8 @@ public class BattleManager : IPersistentSingleton<BattleManager>
                     {
                         if (enemyPrefabs[j].charName == enemiesToSpaw[i])
                         {
-                            BattleChar newEnemy = Instantiate(enemyPrefabs[0], enemyPosition[0].transform.position, enemyPosition[0].transform.rotation);
+                            Debug.Log("Achei o caba aqui meu");
+                            BattleChar newEnemy = Instantiate(enemyPrefabs[j], enemyPosition[i].transform.position, enemyPosition[i].transform.rotation);
                             newEnemy.transform.parent = enemyPosition[0];
                             activeBattlers.Add(newEnemy);
                         }
@@ -120,6 +129,7 @@ public class BattleManager : IPersistentSingleton<BattleManager>
                 }
             }
             UpdateUIStats();
+            answerPanel.SetActive(false);
             ableToAct = true;
             currentEnemy = 0;
             turnWaiting = true;
@@ -139,6 +149,7 @@ public class BattleManager : IPersistentSingleton<BattleManager>
         Debug.Log("Round: " + currentRound);
         turnWaiting = true;
         ableToAct = true;
+        answerPanel.SetActive(false);
     }
 
     public void Flee()
@@ -158,7 +169,13 @@ public class BattleManager : IPersistentSingleton<BattleManager>
     public void Answer()
     {
         ableToAct = false;
+        answerPanel.SetActive(false);
         StartCoroutine(AnswerAnimation());
+    }
+
+    public void ActivateAnswerPanel()
+    {
+        answerPanel.SetActive(true);
     }
 
     public IEnumerator AnswerAnimation()
@@ -171,9 +188,19 @@ public class BattleManager : IPersistentSingleton<BattleManager>
         }
     }
 
+    public IEnumerator RespawnDungeon()
+    {
+        yield return new WaitForSeconds(2f);
+        GameManager.Instance.lifes = 3;
+        TeleportPlayer.Teleport(respawnLocal);
+        UpdateUIStats();
+    }
+
+
     public IEnumerator EndBattle()
     {
         battleActive = false;
+        lifesRemainingText.text = GameManager.Instance.lifes.ToString();
         yield return new WaitForSeconds(.5f);
         UIFade.Instance.FadeToBlack();
         yield return new WaitForSeconds(1.5f);
@@ -212,6 +239,7 @@ public class BattleManager : IPersistentSingleton<BattleManager>
         calcTypeInfo.text = questionList.questions[index].operation;
         localInfo.text = "Dungeon";
         index++;
+        lifesRemainingText.text = GameManager.Instance.lifes.ToString();
         //playerMpText.text = activeBattlers[0].currentMp.ToString() + "/" + activeBattlers[0].maxMp.ToString();
     }
 
@@ -221,13 +249,13 @@ public class BattleManager : IPersistentSingleton<BattleManager>
         {
             activeBattlers[0].EnemyFade();
             Debug.Log("Você perdeu a batalha");
+            GameManager.Instance.lifes--;
             StartCoroutine(EndBattle());
         }
         if(correctAnswersCount >= 3)
         {
             Debug.Log("Você venceu a batalha");
-            activeBattlers[1].EnemyFade();
-            activeBattlers.RemoveAt(1);
+            activeBattlers[0].EnemyFade();
             currentEnemy++;
         }
         if (activeBattlers.Count == 1)
@@ -249,7 +277,7 @@ public class BattleManager : IPersistentSingleton<BattleManager>
         {
             Debug.Log("Errou a resposta");
         }
-        playerAnswer.text = "";
+        answerInput.text = "";
     }
 
 }

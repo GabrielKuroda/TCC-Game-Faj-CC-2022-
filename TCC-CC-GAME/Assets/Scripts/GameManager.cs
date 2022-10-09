@@ -7,11 +7,13 @@ using UnityEngine.SceneManagement;
 public class GameManager : IPersistentSingleton<GameManager>
 {
 
+    public int lifes = 3;
     public bool gameMenuOpen, dialogActive, fadingBetweenAreas, battleActive;
 
     // Start is called before the first frame update
     void Start()
     {
+        lifes = 3;
         DontDestroyOnLoad(gameObject);
     }
 
