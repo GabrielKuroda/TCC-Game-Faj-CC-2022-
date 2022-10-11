@@ -90,6 +90,15 @@ public class BattleManager : IPersistentSingleton<BattleManager>
     {
         if (!battleActive)
         {
+
+            if(receivedOperation == "multiplicacao")
+            {
+                for (int i = 0; i < questions.questions.Length; i++)
+                {
+                    questions.questions[i].equation = questions.questions[i].equation.Replace("*", "x");
+                }
+            }
+
             activeBattlers = new List<BattleChar>();
             questionList = questions;
             currentRound = 1;

@@ -31,7 +31,10 @@ public class PlayerController : IPersistentSingleton<PlayerController>
     // Update is called once per frame
     void Update()
     {
-
+        if (Input.GetKey(KeyCode.K))
+        {
+            Debug.Log(PlayerPrefs.GetInt("forest_door_2_is_open"));
+        }
     }
 
     private void FixedUpdate()

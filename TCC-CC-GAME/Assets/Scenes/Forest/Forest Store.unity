@@ -200,7 +200,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 19381166}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.935545, y: -1.1715533, z: 0}
+  m_LocalPosition: {x: 5.07, y: -1.1715533, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 106081031}
@@ -353,11 +353,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3085655177649924445, guid: e9031f60b33227c4d89e34b4e1c72ffe, type: 3}
       propertyPath: areaToLoad
-      value: Desert Boss Dungeon
+      value: Forest Boss Dungeon
       objectReference: {fileID: 0}
     - target: {fileID: 3085655177649924445, guid: e9031f60b33227c4d89e34b4e1c72ffe, type: 3}
       propertyPath: areaTransitionName
-      value: begin-3-4
+      value: begin-F-4
       objectReference: {fileID: 0}
     - target: {fileID: 4018908707700100873, guid: e9031f60b33227c4d89e34b4e1c72ffe, type: 3}
       propertyPath: m_LocalPosition.x
@@ -662,7 +662,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doorArea: {fileID: 114631474}
   spriteOpenDoor: {fileID: 21300000, guid: 2d457a04b398b814899d62f5ae7583ef, type: 3}
-  variableDoorName: desert_door_4_is_open
+  variableDoorName: forest_door_4_is_open
 --- !u!1 &402488831
 GameObject:
   m_ObjectHideFlags: 0
@@ -739,7 +739,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 402488831}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.860242, y: 2.1884468, z: 0}
+  m_LocalPosition: {x: 6.77, y: 2.1884468, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 106081031}
@@ -762,11 +762,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3085655177649924445, guid: e9031f60b33227c4d89e34b4e1c72ffe, type: 3}
       propertyPath: areaToLoad
-      value: Desert Second Dungeon
+      value: Forest Second Dungeon
       objectReference: {fileID: 0}
     - target: {fileID: 3085655177649924445, guid: e9031f60b33227c4d89e34b4e1c72ffe, type: 3}
       propertyPath: areaTransitionName
-      value: begin-3-2
+      value: begin-F-2
       objectReference: {fileID: 0}
     - target: {fileID: 4018908707700100873, guid: e9031f60b33227c4d89e34b4e1c72ffe, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4889,7 +4889,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 886746660}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.2655444, y: 1.3084468, z: 0}
+  m_LocalPosition: {x: 16.6, y: 1.3084468, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 106081031}
@@ -5019,7 +5019,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doorArea: {fileID: 278801548}
   spriteOpenDoor: {fileID: 21300000, guid: 2d457a04b398b814899d62f5ae7583ef, type: 3}
-  variableDoorName: desert_door_2_is_open
+  variableDoorName: forest_door_2_is_open
 --- !u!4 &1164086034 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5857815089367167199, guid: 7f0bacac244001c4686e5d6c5ba3345b, type: 3}
@@ -5106,7 +5106,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1268140464}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 16.615545, y: 1.8384467, z: 0}
+  m_LocalPosition: {x: 10.06, y: 1.8384467, z: 0}
   m_LocalScale: {x: 1, y: 1.2, z: 1}
   m_Children: []
   m_Father: {fileID: 106081031}
@@ -5232,7 +5232,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1371724399}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -49.48, y: -2.58, z: 0}
+  m_LocalPosition: {x: -43.19, y: -2.58, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2004978954}
@@ -5247,11 +5247,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8065923942208719937, guid: 66aa848f63b2c5d40bed59bf2a815b6e, type: 3}
       propertyPath: areaToLoad
-      value: Desert
+      value: Forest
       objectReference: {fileID: 0}
     - target: {fileID: 8065923942208719937, guid: 66aa848f63b2c5d40bed59bf2a815b6e, type: 3}
       propertyPath: areaTransitionName
-      value: begin-3-0
+      value: begin-F-0
       objectReference: {fileID: 0}
     - target: {fileID: 8065923942709041548, guid: 66aa848f63b2c5d40bed59bf2a815b6e, type: 3}
       propertyPath: m_RootOrder
@@ -5337,7 +5337,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1443418962}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -49.4, y: -4.2200003, z: 0}
+  m_LocalPosition: {x: -42.82, y: -4.2200003, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2004978954}
@@ -14969,63 +14969,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5857815089367167199, guid: 7f0bacac244001c4686e5d6c5ba3345b, type: 3}
   m_PrefabInstance: {fileID: 149044094}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1739502849
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 5560453324440032283, guid: 96b2915abb644224398587cec74cdc8c, type: 3}
-      propertyPath: m_RootOrder
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 5560453324440032283, guid: 96b2915abb644224398587cec74cdc8c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5560453324440032283, guid: 96b2915abb644224398587cec74cdc8c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5560453324440032283, guid: 96b2915abb644224398587cec74cdc8c, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5560453324440032283, guid: 96b2915abb644224398587cec74cdc8c, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5560453324440032283, guid: 96b2915abb644224398587cec74cdc8c, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5560453324440032283, guid: 96b2915abb644224398587cec74cdc8c, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5560453324440032283, guid: 96b2915abb644224398587cec74cdc8c, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5560453324440032283, guid: 96b2915abb644224398587cec74cdc8c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5560453324440032283, guid: 96b2915abb644224398587cec74cdc8c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5560453324440032283, guid: 96b2915abb644224398587cec74cdc8c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6979037997811290313, guid: 96b2915abb644224398587cec74cdc8c, type: 3}
-      propertyPath: m_Name
-      value: AudioControl
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 96b2915abb644224398587cec74cdc8c, type: 3}
 --- !u!1001 &1740193330
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15043,11 +14986,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3085655177649924445, guid: e9031f60b33227c4d89e34b4e1c72ffe, type: 3}
       propertyPath: areaToLoad
-      value: Desert Third Dungeon
+      value: Forest Third Dungeon
       objectReference: {fileID: 0}
     - target: {fileID: 3085655177649924445, guid: e9031f60b33227c4d89e34b4e1c72ffe, type: 3}
       propertyPath: areaTransitionName
-      value: begin-3-3
+      value: begin-F-3
       objectReference: {fileID: 0}
     - target: {fileID: 4018908707700100873, guid: e9031f60b33227c4d89e34b4e1c72ffe, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15264,7 +15207,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doorArea: {fileID: 1740193332}
   spriteOpenDoor: {fileID: 21300000, guid: 2d457a04b398b814899d62f5ae7583ef, type: 3}
-  variableDoorName: desert_door_3_is_open
+  variableDoorName: forest_door_3_is_open
 --- !u!1 &1902589958
 GameObject:
   m_ObjectHideFlags: 0
@@ -15341,7 +15284,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1902589958}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.835545, y: 2.9819293, z: 0}
+  m_LocalPosition: {x: 12.97, y: 2.9819293, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 106081031}
@@ -15371,7 +15314,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2004978953}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -6.52, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 263048041}
@@ -15397,7 +15340,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2114412353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15437,7 +15380,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2303609028937216513, guid: 45c5cebbfe0288a4ea289f5b5f0206ba, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.6633682
+      value: -4.63
       objectReference: {fileID: 0}
     - target: {fileID: 2303609028937216513, guid: 45c5cebbfe0288a4ea289f5b5f0206ba, type: 3}
       propertyPath: m_LocalPosition.y
@@ -15555,11 +15498,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3085655177649924445, guid: e9031f60b33227c4d89e34b4e1c72ffe, type: 3}
       propertyPath: areaToLoad
-      value: Desert First Dungeon
+      value: Forest First Dungeon
       objectReference: {fileID: 0}
     - target: {fileID: 3085655177649924445, guid: e9031f60b33227c4d89e34b4e1c72ffe, type: 3}
       propertyPath: areaTransitionName
-      value: begin-3-1
+      value: begin-F-1
       objectReference: {fileID: 0}
     - target: {fileID: 4018908707700100873, guid: e9031f60b33227c4d89e34b4e1c72ffe, type: 3}
       propertyPath: m_LocalPosition.x
