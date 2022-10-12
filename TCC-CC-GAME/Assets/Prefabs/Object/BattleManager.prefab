@@ -740,11 +740,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 367eaaee86ee1ca4ca1c025e40811a76, type: 2}
-    m_FontSize: 35
+    m_Font: {fileID: 12800000, guid: a81baf42f8dd13b43b51b5dc983a0b02, type: 3}
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 2
+    m_MinSize: 0
     m_MaxSize: 45
     m_Alignment: 3
     m_AlignByGeometry: 0
@@ -811,7 +811,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -819,11 +819,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 367eaaee86ee1ca4ca1c025e40811a76, type: 2}
-    m_FontSize: 23
+    m_Font: {fileID: 12800000, guid: a81baf42f8dd13b43b51b5dc983a0b02, type: 3}
+    m_FontSize: 19
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 2
+    m_MinSize: 1
     m_MaxSize: 94
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -1293,12 +1293,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 367eaaee86ee1ca4ca1c025e40811a76, type: 2}
-    m_FontSize: 30
+    m_Font: {fileID: 12800000, guid: a81baf42f8dd13b43b51b5dc983a0b02, type: 3}
+    m_FontSize: 21
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 2
-    m_MaxSize: 40
+    m_MinSize: 1
+    m_MaxSize: 121
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -2787,11 +2787,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 367eaaee86ee1ca4ca1c025e40811a76, type: 2}
-    m_FontSize: 22
+    m_Font: {fileID: 12800000, guid: a81baf42f8dd13b43b51b5dc983a0b02, type: 3}
+    m_FontSize: 17
     m_FontStyle: 2
     m_BestFit: 0
-    m_MinSize: 2
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 3
     m_AlignByGeometry: 0
