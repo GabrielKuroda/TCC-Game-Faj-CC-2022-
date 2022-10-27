@@ -19,10 +19,12 @@ public class DoorUpdate : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log(collision.tag);
         switch (collision.tag)
         {
             case "Player":
                 PlayerPrefs.SetInt(variableDoorName, 1);
+                Debug.Log("variableDoorName value = " + PlayerPrefs.GetInt("forest_door_2_is_open"));
                 break;
         }
     }

@@ -26,4 +26,22 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Desert Boss Dungeon.unity
     guid: 0a1afe2ecacfdf0428cf79f92ae4ce1a
+  - enabled: 1
+    path: Assets/Scenes/Forest/Forest.unity
+    guid: 55a0d4eb7832a194ea931d9b27c722bd
+  - enabled: 1
+    path: Assets/Scenes/Forest/Forest Store.unity
+    guid: 944743d4279f5894dad58d99a0db5dbd
+  - enabled: 1
+    path: Assets/Scenes/Forest/Forest First Dungeon.unity
+    guid: 4e7d89d333d027a4f9c0c435a114af65
+  - enabled: 1
+    path: Assets/Scenes/Forest/Forest Second Dungeon.unity
+    guid: 5ed333929c28e4746b3fe30514d4a146
+  - enabled: 1
+    path: Assets/Scenes/Forest/Forest Third Dungeon.unity
+    guid: 5014020e3ae7736498a8bb6c9dbe58a7
+  - enabled: 1
+    path: Assets/Scenes/Forest/Forest Boss Dungeon.unity
+    guid: f45ec762cd58304408a595701d774db1
   m_configObjects: {}

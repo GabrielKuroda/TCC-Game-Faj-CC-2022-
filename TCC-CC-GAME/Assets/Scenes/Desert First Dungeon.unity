@@ -240,7 +240,23 @@ MonoBehaviour:
   - enemies:
     - zero
   - enemies:
-    - zero
+    - one
+  - enemies:
+    - two
+  - enemies:
+    - three
+  - enemies:
+    - four
+  - enemies:
+    - five
+  - enemies:
+    - six
+  - enemies:
+    - seven
+  - enemies:
+    - eight
+  - enemies:
+    - nine
   activateOnStay: 0
   timeBetweenBattles: 2
   operation: adicao
@@ -271,13 +287,13 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: 16.429277, y: 12.255108}
-      - {x: -43.930786, y: 12.233009}
-      - {x: -41.908012, y: -4.855543}
-      - {x: -7.1136765, y: -5.607467}
-      - {x: -7.123211, y: -16.032118}
-      - {x: -7.044153, y: -16.863499}
-      - {x: 12.178436, y: -16.77573}
-      - {x: 16.271194, y: -7.7828074}
+      - {x: -44.284122, y: 12.233009}
+      - {x: -41.908012, y: -5.6505556}
+      - {x: -5.7062697, y: -5.7128334}
+      - {x: -5.715804, y: -16.402487}
+      - {x: -5.710821, y: -17.530165}
+      - {x: 11.913431, y: -17.482407}
+      - {x: 16.359528, y: -7.7828074}
 --- !u!4 &69154744
 Transform:
   m_ObjectHideFlags: 0
@@ -747,7 +763,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &905759000
 Transform:
   m_ObjectHideFlags: 0

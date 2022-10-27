@@ -11,6 +11,7 @@ public class AreaEntrance : MonoBehaviour
     {
         if (transitionName == PlayerController.Instance.areaTransitionName)
         {
+            GameManager.Instance.lifes = 3;
             PlayerController.Instance.transform.position = transform.position;
         }
 

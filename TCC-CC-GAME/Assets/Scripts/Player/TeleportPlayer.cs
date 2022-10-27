@@ -22,8 +22,13 @@ public class TeleportPlayer : MonoBehaviour
         switch (collision.tag)
         {
             case "Player":
-                PlayerController.Instance.transform.position = teleportPoint.position;
+                Teleport(teleportPoint.position);
                 break;
         }
+    }
+
+    public static void Teleport(Vector3 teleportPoint)
+    {
+        PlayerController.Instance.transform.position = teleportPoint;
     }
 }
