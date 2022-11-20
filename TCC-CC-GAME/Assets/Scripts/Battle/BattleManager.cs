@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 using UnityEngine.SceneManagement;
 
 public class BattleManager : IPersistentSingleton<BattleManager>
@@ -35,8 +36,8 @@ public class BattleManager : IPersistentSingleton<BattleManager>
 
     public Text playerNameText;
     private string correctAnswer;
-    public Text question;
-    public Text playerAnswer;
+    public  TextMeshProUGUI question;
+    public TextMeshProUGUI playerAnswer;
     public Text battleStageInfo;
     public Text difficultInfo;
     public Text calcTypeInfo;

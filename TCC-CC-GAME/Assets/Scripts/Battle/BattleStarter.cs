@@ -62,7 +62,10 @@ public class BattleStarter : IPersistentSingleton<BattleStarter>
 
         var getRequest = CreateRequest(endpoint);
         yield return getRequest.SendWebRequest();
-        QuestionList questionList = QuestionMapper.convertJsonToQuestion(getRequest.downloadHandler.text);
+        //QuestionList questionList = QuestionMapper.convertJsonToQuestion(getRequest.downloadHandler.text);
+        object objResponse = "[{\"difficulty\":\"facil\",\"operation\":\"adicao\",\"equation\":\"3+2\",\"answer\":\"5\"},{\"difficulty\":\"facil\",\"operation\":\"adicao\",\"equation\":\"4+4\",\"answer\":\"8\"},{\"difficulty\":\"facil\",\"operation\":\"adicao\",\"equation\":\"14+2\",\"answer\":\"16\"},{\"difficulty\":\"facil\",\"operation\":\"adicao\",\"equation\":\"3+3\",\"answer\":\"6\"},{\"difficulty\":\"facil\",\"operation\":\"adicao\",\"equation\":\"3+4\",\"answer\":\"7\"},{\"difficulty\":\"facil\",\"operation\":\"adicao\",\"equation\":\"5+3\",\"answer\":\"8\"},{\"difficulty\":\"facil\",\"operation\":\"adicao\",\"equation\":\"3+6\",\"answer\":\"9\"},{\"difficulty\":\"facil\",\"operation\":\"adicao\",\"equation\":\"10+1\",\"answer\":\"11\"},{\"difficulty\":\"facil\",\"operation\":\"adicao\",\"equation\":\"9+8\",\"answer\":\"17\"},{\"difficulty\":\"facil\",\"operation\":\"adicao\",\"equation\":\"2+18\",\"answer\":\"20\"},{\"difficulty\":\"facil\",\"operation\":\"adicao\",\"equation\":\"5+1\",\"answer\":\"6\"},{\"difficulty\":\"facil\",\"operation\":\"adicao\",\"equation\":\"15+8\",\"answer\":\"23\"}]";
+        QuestionList questionList = QuestionMapper.convertJsonToQuestion(objResponse.ToString());
+
 
         UIFade.Instance.FadeToBlack();
         int selectedBattle = Random.Range(0, potentialBattles.Length);
