@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 
 public class BattleManager : IPersistentSingleton<BattleManager>
 {
-
     private bool battleActive;
     private bool ableToAct;
     public bool turnWaiting;
@@ -34,10 +33,9 @@ public class BattleManager : IPersistentSingleton<BattleManager>
     public QuestionList questionList;
     public QuestionList battleQuestionList;
 
-    public Text playerNameText;
     private string correctAnswer;
     public  TextMeshProUGUI question;
-    public TextMeshProUGUI playerAnswer;
+    public Text playerAnswer;
     public Text battleStageInfo;
     public Text difficultInfo;
     public Text calcTypeInfo;
@@ -56,7 +54,7 @@ public class BattleManager : IPersistentSingleton<BattleManager>
     // Start is called before the first frame update
     void Start()
     {
-        respawnLocal = new Vector3(-6.72f, 0.29f, 0f);
+        respawnLocal = new Vector3(-49.5f, 7.4f, 0f);
         DontDestroyOnLoad(gameObject);
     }
 
@@ -94,14 +92,14 @@ public class BattleManager : IPersistentSingleton<BattleManager>
 
             if(receivedOperation == "multiplicacao")
             {
-                for (int i = 0; i < questions.questions.Length; i++)
+                for (int i = 0; i < questions.questions.Count; i++)
                 {
                     questions.questions[i].equation = questions.questions[i].equation.Replace("*", "x");
                 }
             }
 
             activeBattlers = new List<BattleChar>();
-            questionList = questions;
+            questionList = SelectRandomQuestions(questions);
             currentRound = 1;
             index = 0;
             Debug.Log("Questão 1: " + questionList.questions[0].equation);
@@ -149,7 +147,16 @@ public class BattleManager : IPersistentSingleton<BattleManager>
 
     private QuestionList SelectRandomQuestions(QuestionList questionList)
     {
-        return questionList;
+        List<QuestionObject> questionObjects = new List<QuestionObject>();
+        for (int i = 0; i < 5; i++)
+        {
+            int index = Random.Range(0, questionList.questions.Count - 1);
+            questionObjects.Add(questionList.questions[index]);
+            questionList.questions.RemoveAt(index);
+        }
+        QuestionList finalQuestionList = new QuestionList();
+        finalQuestionList.questions = questionObjects;
+        return finalQuestionList;
     }
 
     public void NextTurn()
@@ -200,12 +207,13 @@ public class BattleManager : IPersistentSingleton<BattleManager>
 
     public IEnumerator RespawnDungeon()
     {
-        yield return new WaitForSeconds(2f);
         GameManager.Instance.lifes = 3;
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene("Desert Store");
         TeleportPlayer.Teleport(respawnLocal);
+        index = 0;
         UpdateUIStats();
     }
-
 
     public IEnumerator EndBattle()
     {
@@ -235,7 +243,6 @@ public class BattleManager : IPersistentSingleton<BattleManager>
         {
             ValidateWin();
         }
-        
     }
 
     public void UpdateUIStats()
@@ -250,7 +257,6 @@ public class BattleManager : IPersistentSingleton<BattleManager>
         localInfo.text = "Dungeon";
         index++;
         lifesRemainingText.text = GameManager.Instance.lifes.ToString();
-        //playerMpText.text = activeBattlers[0].currentMp.ToString() + "/" + activeBattlers[0].maxMp.ToString();
     }
 
     public void ValidateWin()
@@ -289,5 +295,4 @@ public class BattleManager : IPersistentSingleton<BattleManager>
         }
         answerInput.text = "";
     }
-
 }

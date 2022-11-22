@@ -5,5 +5,5 @@ using UnityEngine;
 [System.Serializable]
 public class QuestionList
 {
-    public QuestionObject[] questions;
+    public List<QuestionObject> questions;
 }
