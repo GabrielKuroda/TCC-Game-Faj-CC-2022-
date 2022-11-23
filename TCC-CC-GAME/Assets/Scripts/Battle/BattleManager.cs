@@ -41,6 +41,10 @@ public class BattleManager : IPersistentSingleton<BattleManager>
     public Text calcTypeInfo;
     public Text localInfo;
     public Text lifesRemainingText;
+    public GameObject winText;
+    public GameObject loseText;
+    public GameObject correctAnswerText;
+    public GameObject wrongAnswerText;
 
     public InputField answerInput;
 
@@ -236,6 +240,14 @@ public class BattleManager : IPersistentSingleton<BattleManager>
         NextTurn();
     }
 
+
+    public IEnumerator ShowText(GameObject gameObject)
+    {
+        gameObject.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        gameObject.SetActive(false);
+    }
+
     public void AnswerQuestion()
     {
         ValidateCorretAnswer();
@@ -266,6 +278,7 @@ public class BattleManager : IPersistentSingleton<BattleManager>
             activeBattlers[0].EnemyFade();
             Debug.Log("Você perdeu a batalha");
             GameManager.Instance.lifes--;
+            StartCoroutine(ShowText(loseText));
             StartCoroutine(EndBattle());
         }
         if(correctAnswersCount >= 3)
@@ -273,6 +286,7 @@ public class BattleManager : IPersistentSingleton<BattleManager>
             Debug.Log("Você venceu a batalha");
             activeBattlers[0].EnemyFade();
             currentEnemy++;
+            StartCoroutine(ShowText(winText));
         }
         if (activeBattlers.Count == 1)
         {
@@ -289,9 +303,16 @@ public class BattleManager : IPersistentSingleton<BattleManager>
             correctAnswersCount++;
             Debug.Log("Acertou a resposta");
         }
-        else
+
+        else if (index < 5)
         {
             Debug.Log("Errou a resposta");
+            StartCoroutine(ShowText(wrongAnswerText));
+        }
+
+        if (playerAnswer.text == correctAnswer && index < 5)
+        {
+            StartCoroutine(ShowText(correctAnswerText));
         }
         answerInput.text = "";
     }
