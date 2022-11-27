@@ -259,7 +259,7 @@ MonoBehaviour:
     - nine
   activateOnStay: 0
   timeBetweenBattles: 4
-  operation: adicao
+  operation: multiplicacao
   difficult: facil
 --- !u!60 &69154743
 PolygonCollider2D:

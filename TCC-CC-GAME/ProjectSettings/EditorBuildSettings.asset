@@ -44,4 +44,22 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Forest/Forest Boss Dungeon.unity
     guid: f45ec762cd58304408a595701d774db1
+  - enabled: 1
+    path: Assets/Scenes/Winter/Winter Store.unity
+    guid: c84cb4d5d064a0a48a57362a2826be4e
+  - enabled: 1
+    path: Assets/Scenes/Winter/Winter.unity
+    guid: e3c33988b70b8d146b31f9078b2923dc
+  - enabled: 1
+    path: Assets/Scenes/Winter/Winter First Dungeon.unity
+    guid: cc32241f04ccf1a41bd99bdb957c3c0d
+  - enabled: 1
+    path: Assets/Scenes/Winter/Winter Boss Dungeon.unity
+    guid: 4418e068617ecde4fa639d58012aea8c
+  - enabled: 1
+    path: Assets/Scenes/Winter/Winter Second Dungeon.unity
+    guid: f607ff79ee6d5c54bb63e12e2c64047b
+  - enabled: 1
+    path: Assets/Scenes/Winter/Winter Third Dungeon.unity
+    guid: 157d60d794e123749a9136d19d69c665
   m_configObjects: {}

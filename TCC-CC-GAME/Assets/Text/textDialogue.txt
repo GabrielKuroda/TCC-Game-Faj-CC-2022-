@@ -12,6 +12,36 @@ Pequeno Abaco: Oiiii :)
 Mr.Régua: Infelizmente estou meio preocupado, a cidade acabou sendo tomada por certo vírus, e infectou varios amigos meus, que estão agindo de maneiro ruim agora
 Mr.Régua: Fiquei sabendo que estão se escondendo na Loja
 
+1: Olá! Sou o número 1!
+
+2: Olá! Sou o número 2!
+2: Sou um número Primo!
+
+3: Olá! Sou o número 3!
+3: Sou um número Primo!
+
+4: Olá! Sou o número 4!
+4: Sou da família do 2!
+
+5: Olá! Sou o número 5!
+5: Sou um número Primo!
+
+6: Olá! Sou o número 6!
+6: Sou da família do 2 e do 3!
+
+7: Olá! Sou o número 7!
+7: Sou um número Primo!
+
+8: Olá! Sou o número 8!
+8: Sou da família do 2 e do 4!
+
+9: Olá! Sou o número 9!
+9: Sou da família do 3!
+
+0: Olá! Sou o número 0!
+0: Se eu for adicionado ou subtraido a algum número, o resultado será o mesmo!
+0: E que qualquer número multiplicado por mim será igual a 0!
+0: Além disso eu não posso dividir nenhum número por mim!
 
 
 

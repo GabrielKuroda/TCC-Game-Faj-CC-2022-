@@ -628,7 +628,7 @@ MonoBehaviour:
     - nine
   activateOnStay: 0
   timeBetweenBattles: 2
-  operation: adicao
+  operation: multiplicacao
   difficult: dificil
 --- !u!4 &847045314
 Transform:
