@@ -32,7 +32,8 @@ public class NpcDialogueSettings : MonoBehaviour
 
     void Start()
     {
-       
+        //dialogueIcon = GetComponentInChildren<GameObject>();
+
     }
 
     // Update is called once per frame

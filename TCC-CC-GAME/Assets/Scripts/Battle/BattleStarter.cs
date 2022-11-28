@@ -15,7 +15,7 @@ public class BattleStarter : IPersistentSingleton<BattleStarter>
     public string operation;
     public string difficult;
     
-    private string endpointBase = "http://localhost:8080/questions";
+    private string endpointBase = "http://ec2-18-228-8-216.sa-east-1.compute.amazonaws.com:8080/questions";
 
     void Start()
     {

@@ -24299,6 +24299,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c52185a7f53daeb4591f94c9de4aafa3, type: 3}
+--- !u!1 &991020053 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4464912730887386406, guid: c52185a7f53daeb4591f94c9de4aafa3, type: 3}
+  m_PrefabInstance: {fileID: 991020052}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &993273765
 GameObject:
   m_ObjectHideFlags: 0
@@ -26267,7 +26272,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startOnAwake: 0
   showWithDialog:
-  - {fileID: 0}
+  - {fileID: 991020053}
   textUIObj: {fileID: 1749635646}
   dialoger: 1
   dialogerObj: {fileID: 1284199853}
