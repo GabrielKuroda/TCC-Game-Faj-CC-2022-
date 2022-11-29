@@ -14,6 +14,7 @@ public class BattleStarter : IPersistentSingleton<BattleStarter>
 
     public string operation;
     public string difficult;
+    public string scene;
     
     private string endpointBase = "http://ec2-18-228-8-216.sa-east-1.compute.amazonaws.com:8080/questions";
 
@@ -71,7 +72,7 @@ public class BattleStarter : IPersistentSingleton<BattleStarter>
         int selectedBattle = Random.Range(0, potentialBattles.Length);
         yield return new WaitForSeconds(1.5f);
         Debug.Log("inimigo: " + potentialBattles[selectedBattle].enemies[0]);
-        BattleManager.Instance.BattleStart(potentialBattles[selectedBattle].enemies, questionList, difficult, operation);
+        BattleManager.Instance.BattleStart(potentialBattles[selectedBattle].enemies, questionList, difficult, operation, scene);
         UIFade.Instance.FadeFromBlack();
     }
 

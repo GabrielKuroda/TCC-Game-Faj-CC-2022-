@@ -50,6 +50,7 @@ public class BattleManager : IPersistentSingleton<BattleManager>
 
     private string difficult;
     private string operation;
+    private string currentDungeon;
 
     private Animator playerAnimator;
 
@@ -89,11 +90,10 @@ public class BattleManager : IPersistentSingleton<BattleManager>
         }
     }
 
-    public void BattleStart(string[] enemiesToSpaw, QuestionList questions, string receivedDifficult, string receivedOperation)
+    public void BattleStart(string[] enemiesToSpaw, QuestionList questions, string receivedDifficult, string receivedOperation, string scene)
     {
         if (!battleActive)
         {
-
             if(receivedOperation == "multiplicacao")
             {
                 for (int i = 0; i < questions.questions.Count; i++)
@@ -120,6 +120,7 @@ public class BattleManager : IPersistentSingleton<BattleManager>
             GameManager.Instance.battleActive = true;
             difficult = receivedDifficult;
             operation = receivedOperation;
+            currentDungeon = scene;
             transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, transform.position.z);
 
             battleScene.SetActive(true);
@@ -213,7 +214,7 @@ public class BattleManager : IPersistentSingleton<BattleManager>
     {
         GameManager.Instance.lifes = 3;
         yield return new WaitForSeconds(2f);
-        SceneManager.LoadScene("Desert Store");
+        SceneManager.LoadScene(currentDungeon);
         TeleportPlayer.Teleport(respawnLocal);
         index = 0;
         UpdateUIStats();

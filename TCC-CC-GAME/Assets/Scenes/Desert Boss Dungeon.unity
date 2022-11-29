@@ -630,6 +630,7 @@ MonoBehaviour:
   timeBetweenBattles: 2
   operation: multiplicacao
   difficult: dificil
+  scene: Desert Store
 --- !u!4 &847045314
 Transform:
   m_ObjectHideFlags: 0

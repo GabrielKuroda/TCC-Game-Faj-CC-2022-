@@ -64903,6 +64903,7 @@ MonoBehaviour:
   timeBetweenBattles: 4
   operation: divisao
   difficult: media
+  scene: Winter Store
 --- !u!4 &1849968069
 Transform:
   m_ObjectHideFlags: 0
