@@ -373,6 +373,7 @@ MonoBehaviour:
   timeBetweenBattles: 2
   operation: divisao
   difficult: facil
+  scene: Winter Store
 --- !u!4 &227409248
 Transform:
   m_ObjectHideFlags: 0

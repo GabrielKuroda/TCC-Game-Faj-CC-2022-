@@ -48,7 +48,7 @@ TextureImporter:
       213: 2341192644918922319
     second: MagoComTodasAsBordas_14
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -107,6 +107,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -151,10 +152,10 @@ TextureImporter:
       name: MagoComTodasAsBordas_0
       rect:
         serializedVersion: 2
-        x: 221
-        y: 3293
-        width: 646
-        height: 678
+        x: 0
+        y: 3072
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -172,10 +173,10 @@ TextureImporter:
       name: MagoComTodasAsBordas_1
       rect:
         serializedVersion: 2
-        x: 1277
-        y: 3293
-        width: 614
-        height: 678
+        x: 1024
+        y: 3072
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -193,10 +194,10 @@ TextureImporter:
       name: MagoComTodasAsBordas_2
       rect:
         serializedVersion: 2
-        x: 2269
-        y: 3293
-        width: 646
-        height: 678
+        x: 2048
+        y: 3072
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -214,10 +215,10 @@ TextureImporter:
       name: MagoComTodasAsBordas_3
       rect:
         serializedVersion: 2
-        x: 3293
-        y: 3293
-        width: 646
-        height: 678
+        x: 3072
+        y: 3072
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -235,10 +236,10 @@ TextureImporter:
       name: MagoComTodasAsBordas_4
       rect:
         serializedVersion: 2
-        x: 253
-        y: 2269
-        width: 614
-        height: 678
+        x: 0
+        y: 2048
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -256,10 +257,10 @@ TextureImporter:
       name: MagoComTodasAsBordas_5
       rect:
         serializedVersion: 2
-        x: 1245
-        y: 2269
-        width: 646
-        height: 678
+        x: 1024
+        y: 2048
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -277,10 +278,10 @@ TextureImporter:
       name: MagoComTodasAsBordas_6
       rect:
         serializedVersion: 2
-        x: 2269
-        y: 2269
-        width: 646
-        height: 678
+        x: 2048
+        y: 2048
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -298,10 +299,10 @@ TextureImporter:
       name: MagoComTodasAsBordas_7
       rect:
         serializedVersion: 2
-        x: 3325
-        y: 2269
-        width: 614
-        height: 678
+        x: 3072
+        y: 2048
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -319,10 +320,10 @@ TextureImporter:
       name: MagoComTodasAsBordas_8
       rect:
         serializedVersion: 2
-        x: 221
-        y: 1245
-        width: 646
-        height: 678
+        x: 0
+        y: 1024
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -340,10 +341,10 @@ TextureImporter:
       name: MagoComTodasAsBordas_9
       rect:
         serializedVersion: 2
-        x: 1245
-        y: 1245
-        width: 646
-        height: 678
+        x: 1024
+        y: 1024
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -361,10 +362,10 @@ TextureImporter:
       name: MagoComTodasAsBordas_10
       rect:
         serializedVersion: 2
-        x: 2301
-        y: 1245
-        width: 614
-        height: 678
+        x: 2048
+        y: 1024
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -382,10 +383,10 @@ TextureImporter:
       name: MagoComTodasAsBordas_11
       rect:
         serializedVersion: 2
-        x: 3293
-        y: 1245
-        width: 646
-        height: 678
+        x: 3072
+        y: 1024
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -403,10 +404,10 @@ TextureImporter:
       name: MagoComTodasAsBordas_12
       rect:
         serializedVersion: 2
-        x: 221
-        y: 221
-        width: 646
-        height: 678
+        x: 0
+        y: 0
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -424,10 +425,10 @@ TextureImporter:
       name: MagoComTodasAsBordas_13
       rect:
         serializedVersion: 2
-        x: 1277
-        y: 221
-        width: 614
-        height: 678
+        x: 1024
+        y: 0
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -445,10 +446,10 @@ TextureImporter:
       name: MagoComTodasAsBordas_14
       rect:
         serializedVersion: 2
-        x: 2269
-        y: 221
-        width: 646
-        height: 678
+        x: 2048
+        y: 0
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

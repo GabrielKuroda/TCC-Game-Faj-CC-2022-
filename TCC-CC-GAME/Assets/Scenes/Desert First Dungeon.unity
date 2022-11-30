@@ -261,6 +261,7 @@ MonoBehaviour:
   timeBetweenBattles: 4
   operation: multiplicacao
   difficult: facil
+  scene: Desert Store
 --- !u!60 &69154743
 PolygonCollider2D:
   m_ObjectHideFlags: 0
