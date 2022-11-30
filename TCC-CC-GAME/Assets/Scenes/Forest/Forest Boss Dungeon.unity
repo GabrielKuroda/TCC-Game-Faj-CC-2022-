@@ -321,7 +321,7 @@ MonoBehaviour:
     - nine
   activateOnStay: 0
   timeBetweenBattles: 2
-  operation: divisao
+  operation: subtracao
   difficult: dificil
   scene: Forest Store
 --- !u!4 &318777366
